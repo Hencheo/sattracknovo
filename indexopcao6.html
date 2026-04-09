@@ -1,0 +1,1013 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Sattrack - Proteção Veicular Inteligente Premium</title>
+
+    <!-- Core Scripts -->
+    <script src="../assets/futureui.aura.build/assets/resource_3fa48481346f.js"></script>
+    <script src="../assets/futureui.aura.build/assets/lucide_latest_2eebd0ebe8c2.js"></script>
+    <script src="../assets/digital-architect.aura.build/assets/iconify-icon_d39ffc6e4c56.js"></script>
+
+    <!-- Fonts - Opção 5 Aesthetics -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Outfit:wght@100..900&family=Oswald:wght@200..700&family=Space+Grotesk:wght@300..700&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet" />
+
+    <!-- Estilos Externos -->
+    <link rel="stylesheet" href="indexopcao6.css" id="main-style" />
+</head>
+
+<body>
+
+    <!-- Intro Premium Tech Loader -->
+    <div id="intro-overlay">
+        <div class="relative flex flex-col items-center justify-center">
+            <div class="relative w-32 h-32 flex items-center justify-center mb-8">
+                <!-- Orbit Rings -->
+                <div class="absolute inset-0 border-t-2 border-r-2 border-[var(--accent)] rounded-full animate-spin opacity-80"
+                    style="animation-duration: 2s;"></div>
+                <div class="absolute inset-2 border-b-2 border-l-2 border-[#00a3ff] rounded-full animate-spin opacity-60"
+                    style="animation-direction: reverse; animation-duration: 1.5s;"></div>
+
+                <!-- Center Core -->
+                <div
+                    class="z-10 w-16 h-16 bg-[#001224]/80 backdrop-blur-md border border-[var(--glass-border)] rounded-full flex items-center justify-center shadow-[0_0_30px_rgba(97,206,112,0.3)] animate-pulse">
+                    <iconify-icon icon="solar:global-bold-duotone"
+                        class="text-3xl text-white drop-shadow-[0_0_10px_rgba(255,255,255,0.8)]"></iconify-icon>
+                </div>
+
+                <!-- Abstract radar pulse -->
+                <div class="absolute inset-0 bg-[var(--brand)] rounded-full animate-ping opacity-20"></div>
+            </div>
+
+            <!-- Typography & Status -->
+            <div class="text-center relative">
+                <h1 class="text-2xl font-heading font-black text-white tracking-[0.2em] uppercase mb-3">Sattrack</h1>
+                <div class="flex items-center justify-center gap-3">
+                    <div class="w-8 h-[1px] bg-gradient-to-r from-transparent to-[var(--accent)]"></div>
+                    <span
+                        class="text-[10px] font-mono text-white/50 uppercase tracking-[0.3em] inline-flex gap-1 items-center">
+                        Estabelecendo Link
+                        <span class="flex gap-[2px] ml-1">
+                            <span class="w-1 h-1 bg-[var(--accent)] rounded-full animate-ping"
+                                style="animation-duration: 1s;"></span>
+                            <span class="w-1 h-1 bg-[var(--accent)] rounded-full animate-ping"
+                                style="animation-duration: 1s; animation-delay: 200ms;"></span>
+                            <span class="w-1 h-1 bg-[var(--accent)] rounded-full animate-ping"
+                                style="animation-duration: 1s; animation-delay: 400ms;"></span>
+                        </span>
+                    </span>
+                    <div class="w-8 h-[1px] bg-gradient-to-l from-transparent to-[var(--accent)]"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mouse Spotlight Tracker Overlay -->
+    <div id="global-spotlight"
+        class="pointer-events-none fixed inset-0 z-40 transition-opacity duration-300 opacity-0 mix-blend-overlay">
+    </div>
+
+    <div class="noise-overlay"></div>
+
+    <!-- Liquid Background Layer (Glass Effect Design) -->
+    <div class="liquid-bg-container">
+        <div class="liquid-blob bg-[var(--brand-light)]"
+            style="width: 500px; height: 500px; top: -100px; left: -100px; opacity: 0.1; animation-duration: 20s;">
+        </div>
+        <div class="liquid-blob bg-[var(--accent)]"
+            style="width: 400px; height: 400px; top: 40%; right: -100px; opacity: 0.08; animation-duration: 25s; animation-delay: -5s;">
+        </div>
+        <div class="liquid-blob bg-[var(--brand)]"
+            style="width: 600px; height: 600px; bottom: -150px; left: 20%; opacity: 0.1; animation-duration: 30s; animation-delay: -10s;">
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav id="top-nav"
+        class="fixed top-10 left-1/2 -translate-x-1/2 z-50 w-[90%] max-w-6xl glass-panel px-12 py-6 flex items-center justify-between nav-initial">
+
+        <!-- Logo -->
+        <a href="#" class="flex items-center gap-3">
+            <img id="nav-logo-img" src="assets/LOGO-BRANCA-E-VERDE_4067e88c5083.png" alt="Sattrack" class="h-12 w-auto">
+        </a>
+
+        <!-- Desktop Links -->
+        <div id="desktop-nav-links" class="hidden lg:flex items-center gap-12">
+            <a href="#hero" class="nav-link">Início</a>
+            <a href="#cobertura" class="nav-link">Coberturas</a>
+            <a href="#credenciais" class="nav-link">Digital Security</a>
+        </div>
+
+        <!-- Desktop Button -->
+        <a id="desktop-nav-btn" href="https://app.sattrack.com.br/"
+            class="btn-st py-3 px-8 shadow-none hover:shadow-lg">
+            Área do Cliente
+        </a>
+
+        <!-- Mobile Actions -->
+        <div class="mobile-only-flex items-center gap-3">
+            <button id="mobile-theme-btn"
+                class="flex items-center justify-center p-2 text-white bg-white/10 rounded-full border border-white/20 backdrop-blur-md"
+                style="display: none !important;">
+                <i data-lucide="sun" class="w-5 h-5 hidden" id="theme-icon-sun"></i>
+                <i data-lucide="moon" class="w-5 h-5" id="theme-icon-moon"></i>
+            </button>
+            <button id="mobile-menu-btn" class="text-white">
+                <i data-lucide="menu" class="w-8 h-8"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu-overlay" class="mobile-menu-wrapper">
+        <button id="mobile-close-btn" class="mobile-menu-close">
+            <i data-lucide="x" class="w-8 h-8"></i>
+        </button>
+        <div class="mobile-menu-content">
+            <a href="#hero" class="mobile-nav-link">Início</a>
+            <a href="#cobertura" class="mobile-nav-link">Coberturas</a>
+            <a href="#credenciais" class="mobile-nav-link">Digital Security</a>
+            <div class="mobile-menu-divider"></div>
+            <a href="https://app.sattrack.com.br/" class="btn-st mobile-btn-st">
+                Área do Cliente
+            </a>
+        </div>
+    </div>
+
+    <main class="relative z-10 w-full overflow-hidden">
+
+        <!-- Hero Section Premium Card -->
+        <section id="hero" class="hero-card-container reveal">
+
+            <!-- Expanding Background Image -->
+            <div class="hero-bg-expanding-wrap parallax-img" data-speed="0.05">
+                <img src="assets/hero_premium.png" alt="Sattrack Background" class="hero-bg-expanding-img">
+                <div class="hero-bg-expanding-overlay"></div>
+            </div>
+
+            <!-- Botão de Alternar Tema (Oculto temporariamente) -->
+            <button id="theme-toggle"
+                class="absolute top-10 right-10 z-[100] p-4 glass-panel flex items-center gap-3 hover:scale-105 transition-all"
+                style="display: none !important;">
+                <i data-lucide="palette" class="w-4 h-4"></i>
+                <span>Tema Gelo</span>
+            </button>
+
+            <div class="hero-big-card reveal">
+                <!-- Visual Decoration Area (Glass/Tech) -->
+                <div class="hero-card-visual-area">
+                    <div class="tech-scan-lines"></div>
+
+                    <!-- Floating Labels (Now localized in the visual area) -->
+
+
+                </div>
+
+                <!-- Text Content (Centralizado para impacto) -->
+                <div class="hero-card-content centered">
+                    <div class="hero-bars reveal">
+                        <div class="hero-bar"></div>
+                        <div class="hero-bar"></div>
+                        <div class="hero-bar"></div>
+                    </div>
+
+
+                    <h1 class="hero-title-massive reveal delay-200">
+                        30 DIAS<br />
+                        <span class="text-accent italic">GRÁTIS</span>
+                    </h1>
+
+                    <p class="hero-description-new reveal delay-300 mx-auto">
+                        EXPERIMENTE A ELITE DA PROTEÇÃO VEICULAR INTELIGENTE SEM CUSTOS NO PRIMEIRO MÊS. A TECNOLOGIA
+                        QUE MONITORA +80.000 VEÍCULOS À SUA DISPOSIÇÃO.
+                    </p>
+
+                    <div class="flex flex-wrap justify-center gap-4 mt-8 reveal delay-400">
+                        <a href="#cotacao" class="btn-glass-action px-12 py-6">
+                            <span>QUERO MEUS 30 DIAS</span>
+                        </a>
+                    </div>
+                </div>
+
+
+            </div>
+        </section>
+
+        <!-- Marquee Divider -->
+        <div
+            class="marquee-divider-container w-full py-8 border-y border-white/20 bg-white/10 backdrop-blur-md overflow-hidden z-20">
+            <div class="flex whitespace-nowrap animate-marquee">
+                <span class="marquee-text mx-10 flex items-center gap-4">
+                    <iconify-icon icon="solar:shield-warning-bold-duotone" class="text-[#61CE70]"></iconify-icon>
+                    SATTRACK SYSTEM • PROTEÇÃO MULTI-CAMADAS •
+                    <iconify-icon icon="solar:gps-bold-duotone" class="text-[#61CE70]"></iconify-icon> TELEMETRIA
+                    EM TEMPO REAL •
+                    <iconify-icon icon="solar:danger-triangle-bold-duotone" class="text-[#61CE70]"></iconify-icon>
+                    100% DA TABELA FIPE •
+                </span>
+                <span class="marquee-text mx-10 flex items-center gap-4">
+                    <iconify-icon icon="solar:shield-warning-bold-duotone" class="text-[#61CE70]"></iconify-icon>
+                    SATTRACK SYSTEM • PROTEÇÃO MULTI-CAMADAS •
+                    <iconify-icon icon="solar:gps-bold-duotone" class="text-[#61CE70]"></iconify-icon> TELEMETRIA
+                    EM TEMPO REAL •
+                    <iconify-icon icon="solar:danger-triangle-bold-duotone" class="text-[#61CE70]"></iconify-icon>
+                    100% DA TABELA FIPE •
+                </span>
+            </div>
+        </div>
+
+        <!-- Seção de Estatísticas -->
+        <section id="stats" class="relative pt-16 pb-4 px-6 lg:px-24 mx-auto max-w-7xl overflow-hidden">
+            <div class="mb-0">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 stats-grid">
+                    <div class="glass-card stat-card p-10 rounded-[2.5rem] bg-white/5 border border-white/5">
+                        <h4 class="stat-number"><span class="counter" data-target="16">0</span>+</h4>
+                        <p class="stat-label">Anos de Mercado</p>
+                    </div>
+                    <div class="glass-card stat-card card-80k p-10 rounded-[3rem]">
+                        <h4 class="stat-number-white"><span class="counter" data-target="80">0</span>k</h4>
+                        <p class="stat-label-white">Veículos Ativos</p>
+                    </div>
+                    <div
+                        class="col-span-1 lg:col-span-2 glass-card stat-card p-10 rounded-[2.5rem] flex items-center justify-between group overflow-hidden bg-white/5 border border-white/5">
+                        <div>
+                            <h4 class="stat-presence-title">Presença<br>no Sul</h4>
+                            <p class="stat-presence-label">Unidades Estratégicas</p>
+                        </div>
+                        <iconify-icon icon="solar:map-bold-duotone"
+                            class="text-6xl text-accent/50 group-hover:scale-110 transition-transform opacity-50"></iconify-icon>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção de Coberturas Módulos Inteligentes -->
+        <section id="cobertura" class="relative pt-24 pb-32 px-6 lg:px-24 overflow-hidden z-10 ds-section">
+
+            <!-- Animated Signal/Orbital Background is inherited globally -->
+            <div class="absolute inset-0 -z-10 pointer-events-none opacity-20"></div>
+
+            <div class="flex flex-col md:flex-row justify-between items-end mb-20 gap-8 max-w-7xl mx-auto">
+                <div class="reveal">
+                    <span class="label-txt block mb-4">Módulos de Proteção</span>
+                    <h2
+                        class="font-heading text-5xl md:text-7xl lg:text-8xl font-medium tracking-tight text-white leading-[0.9]">
+                        Coberturas<br /><span class="text-gray-500">Inteligentes</span></h2>
+                </div>
+                <div class="reveal flex lg:pl-12">
+                    <p class="text-gray-400 max-w-sm text-lg leading-relaxed">Garantimos 100% da Tabela FIPE em casos
+                        críticos, proporcionando tranquilidade absoluta baseada em nossa infraestrutura sólida.</p>
+                </div>
+            </div>
+
+            <!-- Bento Grid - Premium Glass System -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+
+                <!-- Card 1: Colisões (Large) -> lg:col-span-2 -->
+                <div
+                    class="glass-card p-10 rounded-3xl cursor-hover group reveal delay-100 flex flex-col justify-between lg:col-span-2 border border-white/10 relative overflow-hidden bg-white/[0.02]">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-br from-[#007bff]/10 to-transparent z-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                    </div>
+                    <div
+                        class="absolute top-0 right-0 p-8 opacity-20 group-hover:opacity-100 transition-opacity duration-500 z-10">
+                        <i data-lucide="arrow-up-right" class="w-8 h-8 text-white"></i>
+                    </div>
+                    <div
+                        class="relative z-10 w-16 h-16 bg-gradient-to-br from-white/10 to-transparent border border-white/10 rounded-2xl flex items-center justify-center text-[var(--accent)] mb-8 shadow-inner group-hover:scale-110 transition-transform duration-500">
+                        <i data-lucide="shield" class="w-8 h-8 text-[var(--accent)]"></i>
+                    </div>
+                    <div class="relative z-10 mt-auto">
+                        <span
+                            class="px-3 py-1 rounded bg-white/5 border border-white/10 text-[10px] font-semibold text-white/60 uppercase tracking-widest mb-4 inline-block backdrop-blur-md">MOD:
+                            001_TOTAL_SEC</span>
+                        <h3 class="font-heading text-3xl font-medium mb-3 text-white tracking-tight">Colisões &
+                            Terceiros</h3>
+                        <p class="text-base text-gray-400 leading-relaxed max-w-xl">Cobertura integral ou parcial.
+                            Protegemos seu patrimônio e garantimos suporte a terceiros envolvidos em sinistros, mantendo
+                            integridade financeira inabalável.</p>
+                    </div>
+                </div>
+
+                <!-- Card 2: Furto & Roubo -->
+                <div
+                    class="glass-card p-8 rounded-3xl cursor-hover group reveal delay-200 flex flex-col justify-between border border-white/10 relative overflow-hidden bg-white/[0.02]">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-br from-[var(--brand)]/10 to-transparent z-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                    </div>
+                    <div
+                        class="absolute top-0 right-0 p-8 opacity-20 group-hover:opacity-100 transition-opacity duration-500 z-10">
+                        <i data-lucide="arrow-up-right" class="w-6 h-6 text-white"></i>
+                    </div>
+                    <div
+                        class="relative z-10 w-14 h-14 bg-gradient-to-br from-white/10 to-transparent border border-white/10 rounded-2xl flex items-center justify-center text-[var(--accent)] mb-8 shadow-inner group-hover:scale-110 transition-transform duration-500">
+                        <i data-lucide="zap" class="w-6 h-6 text-[var(--accent)]"></i>
+                    </div>
+                    <div class="relative z-10 mt-auto">
+                        <h3 class="font-heading text-2xl font-medium mb-3 text-white tracking-tight">Furto & Roubo</h3>
+                        <p class="text-sm text-gray-400 leading-relaxed">Até 100% de ressarcimento caso seu veículo não
+                            seja localizado após acionamento da central tática.</p>
+                    </div>
+                </div>
+
+                <!-- Card 3: Rastreador GPRS -->
+                <div
+                    class="glass-card p-8 rounded-3xl cursor-hover group reveal delay-300 flex flex-col justify-between border border-white/10 relative overflow-hidden bg-white/[0.02]">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-br from-[var(--accent)]/10 to-transparent z-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                    </div>
+                    <div
+                        class="absolute top-0 right-0 p-8 opacity-20 group-hover:opacity-100 transition-opacity duration-500 z-10">
+                        <i data-lucide="arrow-up-right" class="w-6 h-6 text-white"></i>
+                    </div>
+                    <div
+                        class="relative z-10 w-14 h-14 bg-gradient-to-br from-white/10 to-transparent border border-white/10 rounded-2xl flex items-center justify-center text-[var(--accent)] mb-8 shadow-inner group-hover:scale-110 transition-transform duration-500">
+                        <i data-lucide="map-pin" class="w-6 h-6 text-[var(--accent)]"></i>
+                    </div>
+                    <div class="relative z-10 mt-auto">
+                        <h3 class="font-heading text-2xl font-medium mb-3 text-white tracking-tight">Rastreador GPRS
+                        </h3>
+                        <p class="text-sm text-gray-400 leading-relaxed">Precisão métrica com instalação estratégica e
+                            invisível em local oculto, compatível com uso nacional.</p>
+                    </div>
+                </div>
+
+                <!-- Card 4: Assistencia e Guincho (Mid-wide) -> lg:col-span-3 -->
+                <div
+                    class="glass-card p-8 md:p-10 rounded-3xl cursor-hover group reveal delay-100 flex flex-col md:flex-row items-center border border-white/10 relative overflow-hidden lg:col-span-3 bg-gradient-to-r from-[var(--brand)]/20 to-[var(--surface)]/5">
+                    <div
+                        class="absolute top-0 right-0 p-8 opacity-20 group-hover:opacity-100 transition-opacity duration-500 z-10">
+                        <i data-lucide="arrow-up-right" class="w-8 h-8 text-white"></i>
+                    </div>
+                    <div class="relative z-10 md:w-3/4">
+                        <div class="flex items-center gap-2 mb-4 relative">
+                            <span
+                                class="w-2 h-2 rounded-full bg-[var(--accent)] animate-pulse shadow-[0_0_10px_var(--accent)]"></span>
+                            <span
+                                class="text-[10px] font-semibold text-[var(--accent)] uppercase tracking-widest pl-1">Assistência
+                                24h</span>
+                        </div>
+                        <h3 class="font-heading text-4xl font-medium mb-4 text-white tracking-tight">Guincho Nacional
+                        </h3>
+                        <p class="text-base text-gray-400 leading-relaxed max-w-xl md:mb-0 mb-8">Panes elétricas,
+                            mecânicas ou sinistros. Nossa equipe está pronta para o resgate imediato onde você precisar,
+                            oferecendo segurança em qualquer estrada do país.</p>
+                    </div>
+                    <div class="relative z-10 md:w-1/4 flex justify-start md:justify-end">
+                        <div
+                            class="w-24 h-24 bg-gradient-to-br from-[var(--brand)] to-transparent border border-white/10 rounded-2xl flex items-center justify-center shadow-inner group-hover:scale-110 transition-transform duration-500">
+                            <i data-lucide="truck" class="w-12 h-12 text-white"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 5: Perda Total -->
+                <div
+                    class="glass-card p-8 rounded-3xl cursor-hover group reveal delay-200 flex flex-col justify-between border border-white/10 relative overflow-hidden bg-white/[0.02]">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-br from-red-500/10 to-transparent z-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                    </div>
+                    <div
+                        class="absolute top-0 right-0 p-8 opacity-20 group-hover:opacity-100 transition-opacity duration-500 z-10">
+                        <i data-lucide="arrow-up-right" class="w-6 h-6 text-white"></i>
+                    </div>
+                    <div
+                        class="relative z-10 w-14 h-14 bg-gradient-to-br from-white/10 to-transparent border border-white/10 rounded-2xl flex items-center justify-center text-[var(--accent)] mb-8 shadow-inner group-hover:scale-110 transition-transform duration-500">
+                        <i data-lucide="alert-triangle" class="w-6 h-6 text-[var(--accent)]"></i>
+                    </div>
+                    <div class="relative z-10 mt-auto">
+                        <h3 class="font-heading text-2xl font-medium mb-3 text-white tracking-tight">Perda Total</h3>
+                        <p class="text-sm text-gray-400 leading-relaxed">Cobertura integral do valor do veículo em casos
+                            de danos irreparáveis.</p>
+                    </div>
+                </div>
+
+                <!-- Card 6: Carro Reserva -->
+                <div
+                    class="glass-card p-8 rounded-3xl cursor-hover group reveal delay-100 flex flex-col justify-between border border-white/10 relative overflow-hidden bg-white/[0.02]">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-transparent z-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                    </div>
+                    <div
+                        class="absolute top-0 right-0 p-8 opacity-20 group-hover:opacity-100 transition-opacity duration-500 z-10">
+                        <i data-lucide="arrow-up-right" class="w-6 h-6 text-white"></i>
+                    </div>
+                    <div
+                        class="relative z-10 w-14 h-14 bg-gradient-to-br from-white/10 to-transparent border border-white/10 rounded-2xl flex items-center justify-center text-[var(--accent)] mb-8 shadow-inner group-hover:scale-110 transition-transform duration-500">
+                        <i data-lucide="key" class="w-6 h-6 text-[var(--accent)]"></i>
+                    </div>
+                    <div class="relative z-10 mt-auto">
+                        <h3 class="font-heading text-2xl font-medium mb-3 text-white tracking-tight">Carro Reserva</h3>
+                        <p class="text-sm text-gray-400 leading-relaxed">Garantia de mobilidade para que você nunca
+                            fique parado durante o reparo de sinistros.</p>
+                    </div>
+                </div>
+
+                <!-- Card 7: Bloqueio Remoto -->
+                <div
+                    class="glass-card p-8 rounded-3xl cursor-hover group reveal delay-200 flex flex-col justify-between border border-[var(--accent)]/30 relative overflow-hidden bg-gradient-to-br from-[#050a14] to-[var(--brand)]/20 lg:col-span-1">
+                    <div
+                        class="absolute inset-0 bg-[var(--accent)]/5 z-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                    </div>
+                    <div
+                        class="absolute top-0 right-0 p-8 opacity-20 group-hover:opacity-100 transition-opacity duration-500 z-10">
+                        <i data-lucide="arrow-up-right" class="w-6 h-6 text-white"></i>
+                    </div>
+                    <div class="flex items-center gap-2 mb-8 absolute top-8 right-8 z-10">
+                        <span class="text-[9px] uppercase tracking-widest text-[#61CE70] font-bold hidden md:block">App
+                            Real-time</span>
+                        <div class="w-1.5 h-1.5 rounded-full bg-[#61CE70] animate-pulse"></div>
+                    </div>
+                    <div
+                        class="relative z-10 w-14 h-14 bg-gradient-to-br from-[var(--brand)] to-[var(--accent)] border border-white/20 rounded-2xl flex items-center justify-center shadow-lg shadow-[var(--accent)]/20 group-hover:scale-110 transition-transform duration-500 mb-8">
+                        <i data-lucide="smartphone" class="w-6 h-6 text-white"></i>
+                    </div>
+                    <div class="relative z-10 mt-auto">
+                        <h3 class="font-heading text-2xl font-medium mb-3 text-white tracking-tight">Bloqueio Remoto
+                        </h3>
+                        <p class="text-sm text-gray-400 leading-relaxed">Controle total via smartphone para interrupção
+                            instantânea em caso de risco.</p>
+                    </div>
+                </div>
+
+                <!-- Card 8: Central Tática 24h -> lg:col-span-2 -->
+                <div
+                    class="glass-card p-8 md:p-10 rounded-3xl cursor-hover group reveal delay-300 flex flex-col md:flex-row items-center border border-white/10 relative overflow-hidden lg:col-span-2 bg-[#050a14]">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-r from-[#0055ff]/10 to-[var(--brand)]/20 z-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                    </div>
+                    <div
+                        class="absolute top-0 right-0 p-8 opacity-20 group-hover:opacity-100 transition-opacity duration-500 z-10">
+                        <i data-lucide="arrow-right" class="w-8 h-8 text-white"></i>
+                    </div>
+                    <div class="relative z-10 md:w-3/4">
+                        <div
+                            class="w-16 h-16 bg-gradient-to-br from-[var(--brand)] to-[#0055ff] border border-white/20 rounded-2xl flex items-center justify-center shadow-lg shadow-[#0055ff]/30 group-hover:scale-110 transition-transform duration-500 mb-8">
+                            <i data-lucide="headphones" class="w-8 h-8 text-white"></i>
+                        </div>
+                        <h3 class="font-heading text-3xl font-medium mb-3 text-white tracking-tight">Central Tática 24h
+                        </h3>
+                        <p class="text-base text-gray-400 leading-relaxed">Nossa equipe de especialistas está à
+                            disposição 24 horas por dia para resgate estratégico e suporte imediato em qualquer lugar do
+                            Brasil.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Bento Style Quote Section -->
+        <section id="cotacao" class="relative py-24 px-6 lg:px-24 overflow-hidden">
+            <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8">
+
+                <!-- Info Block (Modernized with Tech/Live Aura) -->
+                <div
+                    class="lg:col-span-7 reveal glass-card rounded-[3.5rem] p-12 flex flex-col justify-center relative overflow-hidden bg-white/[0.03] border-white/5 group">
+                    <!-- Tech Grid Decoration -->
+                    <div
+                        class="absolute inset-0 opacity-[0.03] pointer-events-none group-hover:opacity-10 transition-opacity duration-1000">
+                        <div class="w-full h-full"
+                            style="background-image: radial-gradient(var(--accent) 1px, transparent 1px); background-size: 30px 30px;">
+                        </div>
+                    </div>
+
+                    <div class="relative z-10">
+                        <div class="flex items-center gap-3 mb-8">
+                            <span class="w-2 h-2 bg-accent rounded-full animate-ping"></span>
+                        </div>
+
+                        <h3 class="cotacao-block-title">
+                            ESTRATÉGIAS DE <span class="text-accent italic">DEFESA</span> PARA SEU PATRIMÔNIO.
+                        </h3>
+
+                        <div class="grid grid-cols-2 gap-8 my-10">
+                            <div class="border-l-2 border-accent/30 pl-6">
+                                <span class="block text-3xl font-bold text-white mb-2">99.8%</span>
+                                <span class="text-[10px] uppercase tracking-widest text-[#61CE70]">Taxa de
+                                    Recuperação</span>
+                            </div>
+                            <div class="border-l-2 border-white/10 pl-6">
+                                <span class="block text-3xl font-bold text-white mb-2">&lt; 15min</span>
+                                <span class="text-[10px] uppercase tracking-widest text-silver-muted">Tempo de Resposta
+                                    Médio</span>
+                            </div>
+                        </div>
+
+                        <p class="cotacao-block-body max-w-xl opacity-60">
+                            A SATTRACK opera em redundância total. Aprovação instantânea sem burocracia,
+                            garantindo que você saia com proteção na mesma hora.
+                        </p>
+
+                        <div
+                            class="mt-12 flex items-center gap-4 py-4 px-6 bg-white/[0.02] border border-white/5 rounded-2xl w-fit">
+                            <div class="flex -space-x-3">
+                                <img src="https://i.pravatar.cc/100?u=12" alt="U"
+                                    class="w-10 h-10 rounded-full border-2 border-primary">
+                                <img src="https://i.pravatar.cc/100?u=13" alt="U"
+                                    class="w-10 h-10 rounded-full border-2 border-primary">
+                                <img src="https://i.pravatar.cc/100?u=14" alt="U"
+                                    class="w-10 h-10 rounded-full border-2 border-primary">
+                            </div>
+                            <span class="text-[10px] font-bold tracking-widest text-white/40 uppercase">+80.000 CLIENTES
+                                PROTEGIDOS</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Form Block (Premium Brand Glass) -->
+                <div class="lg:col-span-5 reveal delay-200 relative">
+                    <!-- Floating 30 Days Free Badge - Even more impact -->
+                    <div class="absolute -top-12 -right-8 z-30 animate-float-badge hidden md:block">
+                        <div
+                            class="glass-card bg-[#61CE70]/20 border-2 border-[#61CE70]/40 backdrop-blur-2xl px-8 py-8 rounded-[3rem] animate-glow-emerald flex flex-col items-center shadow-2xl">
+                            <span class="text-[10px] font-black tracking-[0.3em] text-white/60 mb-1">OFFER_CODE:
+                                TRIAL</span>
+                            <div class="flex items-baseline gap-2">
+                                <span class="text-4xl font-black text-white">30</span>
+                                <span class="text-xs font-bold text-[#61CE70]">DIAS</span>
+                            </div>
+                            <span class="text-xs font-bold text-white uppercase tracking-widest mt-1">TOTAL
+                                GRÁTIS</span>
+                        </div>
+                    </div>
+
+                    <div
+                        class="glass-card bg-[var(--brand)]/80 backdrop-blur-3xl rounded-[3.5rem] p-12 shadow-2xl relative overflow-hidden h-full flex flex-col justify-between border border-white/10 group">
+
+                        <div class="relative z-10 mb-8">
+                            <div class="flex items-center gap-2 mb-2">
+                                <div class="w-8 h-[1px] bg-accent"></div>
+                            </div>
+                            <h4 class="text-4xl font-bold text-white uppercase tracking-tighter">Ativar Proteção</h4>
+                        </div>
+
+                        <form class="relative z-10 space-y-4">
+                            <div class="space-y-4">
+                                <input type="text" placeholder="Nome Completo"
+                                    class="form-input w-full bg-white/5 border-white/10 rounded-2xl px-6 py-5 text-white placeholder:text-white/20 focus:border-accent focus:bg-white/10 transition-all outline-none">
+                                <input type="tel" placeholder="DDD + Telefone"
+                                    class="form-input w-full bg-white/5 border-white/10 rounded-2xl px-6 py-5 text-white placeholder:text-white/20 focus:border-accent focus:bg-white/10 transition-all outline-none">
+                                <div class="grid grid-cols-2 gap-4">
+                                    <input type="text" placeholder="Modelo"
+                                        class="form-input bg-white/5 border-white/10 rounded-2xl px-6 py-5 text-white placeholder:text-white/20 focus:border-accent focus:bg-white/10 transition-all outline-none">
+                                    <input type="text" placeholder="Ano"
+                                        class="form-input bg-white/5 border-white/10 rounded-2xl px-6 py-5 text-white placeholder:text-white/20 focus:border-accent focus:bg-white/10 transition-all outline-none">
+                                </div>
+                            </div>
+
+                            <div class="pt-6">
+                                <button type="button" class="btn-glass-action w-full py-6 text-sm">
+                                    <span>GERAR COTAÇÃO IMEDIATA</span>
+                                </button>
+                                <p class="text-[9px] text-center text-white/30 mt-6 uppercase tracking-[0.2em]">
+                                    Seus dados estão protegidos sob criptografia militar 256-bit.
+                                </p>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Unidades Section -->
+        <section id="unidades" class="max-w-7xl mx-auto px-6 py-32 border-t border-white/5">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8 reveal">
+                <div>
+                    <h2 class="section-eyebrow">Nossa Presença</h2>
+                    <h2 class="section-heading">
+                        Nossas Unidades</h2>
+                    <div class="w-16 h-1 bg-accent mt-4"></div>
+                </div>
+                <div class="max-w-xs md:text-right">
+                    <p class="section-body-right">Infraestrutura física moderna,
+                        oferecendo atendimento presencial de alta qualidade nos principais polos estratégicos do Sul do
+                        Brasil.</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 reveal delay-200">
+                <div class="group relative h-[400px] rounded-[2.5rem] overflow-hidden depth-card">
+                    <img src="assets/WhatsApp-Image-2023-10-19-at-0_d720c74b6df8.jpeg"
+                        class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700"
+                        alt="Curitiba">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
+                    <div class="absolute bottom-10 left-10 z-10">
+                        <h4 class="unit-card-name">Curitiba</h4>
+                        <span class="unit-card-tag">MATRIZ UNIDADE /
+                            PR</span>
+                    </div>
+                </div>
+                <div class="group relative h-[400px] rounded-[2.5rem] overflow-hidden depth-card lg:translate-y-12">
+                    <img src="assets/WhatsApp-Image-2021-09-08-at-1_170e77dfcde2.png"
+                        class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700"
+                        alt="Londrina">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
+                    <div class="absolute bottom-10 left-10 z-10">
+                        <h4 class="unit-card-name">Londrina</h4>
+                        <span class="unit-card-tag">POLO NORTE / PR</span>
+                    </div>
+                </div>
+                <div class="group relative h-[400px] rounded-[2.5rem] overflow-hidden depth-card">
+                    <img src="assets/TRATADA_WhatsApp-Image-2023-07_4e3eb6d69ea0.png"
+                        class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700"
+                        alt="Maringá">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
+                    <div class="absolute bottom-10 left-10 z-10">
+                        <h4 class="unit-card-name">Maringá</h4>
+                        <span class="unit-card-tag">REDUTO OESTE /
+                            PR</span>
+                    </div>
+                </div>
+                <div class="group relative h-[400px] rounded-[2.5rem] overflow-hidden depth-card lg:translate-y-12">
+                    <img src="assets/WhatsApp-Image-2025-09-26-at-1_82fb89957975.jpeg"
+                        class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700"
+                        alt="Ponta Grossa">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
+                    <div class="absolute bottom-10 left-10 z-10">
+                        <h4 class="unit-card-name">Ponta Grossa
+                        </h4>
+                        <span class="unit-card-tag-xs">CAMPOS GERAIS /
+                            PR</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="max-w-7xl mx-auto px-6 py-32 border-t border-white/5 relative z-10">
+            <div class="text-center mb-24 reveal">
+                <h2 class="faq-eyebrow">Dúvidas?</h2>
+                <h2 class="faq-section-title">
+                    Perguntas Frequentes</h2>
+                <div class="w-16 h-1 bg-accent mt-6 mx-auto"></div>
+            </div>
+
+            <div class="max-w-5xl mx-auto px-2 reveal delay-200" id="faq-container">
+                <div class="faq-item open">
+                    <div class="faq-header" onclick="toggleFaq(this)">
+                        <span>Como funciona a Sattrack?</span>
+                        <iconify-icon icon="solar:alt-arrow-down-linear" class="faq-chevron"></iconify-icon>
+                    </div>
+                    <div class="faq-body">
+                        <p>A Sattrack oferece proteção completa para o seu veículo, com coberturas em casos de Furto,
+                            Roubo, Colisão, Colisão a Terceiros e Perda Total. Além disso, disponibiliza guincho 24h,
+                            carro reserva, rastreador com bloqueio, aplicativo de monitoramento e suporte emergencial 24
+                            horas.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-header" onclick="toggleFaq(this)">
+                        <span>Preciso ir presencialmente?</span>
+                        <iconify-icon icon="solar:alt-arrow-down-linear" class="faq-chevron"></iconify-icon>
+                    </div>
+                    <div class="faq-body">
+                        <p>Não! Toda a cotação e contratação pode ser feita digitalmente por telefone ou WhatsApp. Após
+                            a contratação, um técnico vai até o local indicado para instalar o rastreador.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-header" onclick="toggleFaq(this)">
+                        <span>Qual a diferença entre os planos?</span>
+                        <iconify-icon icon="solar:alt-arrow-down-linear" class="faq-chevron"></iconify-icon>
+                    </div>
+                    <div class="faq-body">
+                        <p>O plano Convencional oferece rastreador, bloqueio e monitoramento. O Premium adiciona guincho
+                            regional. O Sattrack Plus é completo: inclui coberturas, guincho nacional e carro reserva.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-header" onclick="toggleFaq(this)">
+                        <span>A Sattrack protege qualquer tipo de veículo?</span>
+                        <iconify-icon icon="solar:alt-arrow-down-linear" class="faq-chevron"></iconify-icon>
+                    </div>
+                    <div class="faq-body">
+                        <p>Sim! Veículos leves, pesados, máquinas agrícolas, náuticos e mais. Para o plano Sattrack
+                            Plus, é necessária uma vistoria prévia.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-header" onclick="toggleFaq(this)">
+                        <span>O que significa "Sem análise de perfil"?</span>
+                        <iconify-icon icon="solar:alt-arrow-down-linear" class="faq-chevron"></iconify-icon>
+                    </div>
+                    <div class="faq-body">
+                        <p>Qualquer pessoa habilitada pode conduzir o veículo protegido. Em caso de colisão, a cobertura
+                            vale mesmo que não seja o titular. Um grande diferencial Sattrack!</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-header" onclick="toggleFaq(this)">
+                        <span>É possível fazer proteção para frotas?</span>
+                        <iconify-icon icon="solar:alt-arrow-down-linear" class="faq-chevron"></iconify-icon>
+                    </div>
+                    <div class="faq-body">
+                        <p>Sim! Planos exclusivos para frotas empresariais com gestão completa: localização em tempo
+                            real, identificação de condutor, redução de custos e otimização de rotas.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Final Social Proof -->
+        <section class="relative py-32 overflow-hidden border-t border-white/5">
+            <div class="absolute inset-0 z-0 bg-primary">
+                <img src="assets/FUNDO-VERDE_aba689c7a527.png" class="w-full h-full object-cover opacity-5"
+                    alt="Background">
+                <div class="absolute inset-0 bg-gradient-to-b from-primary/80 via-primary to-black"></div>
+            </div>
+
+            <div class="max-w-4xl mx-auto px-6 text-center relative z-10 reveal">
+                <img src="assets/LOGO-BRANCA-E-VERDE_4067e88c5083.png" alt="Sattrack"
+                    class="h-10 mx-auto mb-10 brightness-0 invert opacity-50">
+
+                <h2 class="cta-title">
+                    A Segurança que você <span class="highlight-italic">merece.</span>
+                </h2>
+
+                <p class="cta-body">
+                    Faça sua contratação hoje mesmo e descubra por que somos a escolha de <strong>+80 mil
+                        motoristas.</strong>
+                </p>
+
+                <div class="flex flex-wrap justify-center gap-8 items-center">
+                    <a href="https://wa.me/seu-numero" class="btn-glass-action py-5 px-12">
+                        <span>Ativar 30 Dias Grátis</span>
+                    </a>
+                    <a href="#cotacao" class="cta-link-secondary">
+                        Simular Online <iconify-icon icon="solar:arrow-right-up-linear"></iconify-icon>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="py-20 border-t border-white/5 bg-black relative z-10">
+            <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+                <div class="reveal">
+                    <img src="assets/LOGO_SATTRACK_cbad98b4b2c4.png" alt="Sattrack"
+                        class="h-8 mb-6 brightness-0 invert opacity-60">
+                    <p class="footer-description">Pioneira em proteção veicular com
+                        tecnologia de rastreamento avançada e foco total no cliente.</p>
+                </div>
+                <div class="reveal delay-100">
+                    <h5 class="footer-heading">Londrina –
+                        Matriz</h5>
+                    <p class="footer-address">(43) 3372-3000<br>Av. Henrique
+                        Mansano, 1655 – Santa Monica</p>
+                    <h5 class="footer-heading footer-heading-mt">Maringá
+                    </h5>
+                    <p class="footer-address">(44) 3123-7900<br>Av. Colombo, 7349 –
+                        Zona 7</p>
+                </div>
+                <div class="reveal delay-200">
+                    <h5 class="footer-heading">Curitiba</h5>
+                    <p class="footer-address">(41) 3501-5580<br>Av. Com. Franco,
+                        5355 – Jardim das Américas</p>
+                    <h5 class="footer-heading footer-heading-mt">Ponta
+                        Grossa</h5>
+                    <p class="footer-address">(42) 3320-0002<br>Av. Visc. de Mauá,
+                        2390 – C. Dona Luiza</p>
+                </div>
+                <div class="reveal delay-300">
+                    <h5 class="footer-heading-xs">
+                        Siga-nos</h5>
+                    <div class="flex gap-3 mb-8">
+                        <a href="#" class="footer-social-link"><iconify-icon icon="lucide:instagram"></iconify-icon></a>
+                        <a href="#" class="footer-social-link facebook"><iconify-icon
+                                icon="lucide:facebook"></iconify-icon></a>
+                        <a href="#" class="footer-social-link youtube"><iconify-icon
+                                icon="lucide:youtube"></iconify-icon></a>
+                    </div>
+                    <h5 class="footer-heading">Links</h5>
+                    <ul class="footer-links space-y-3">
+                        <li><a href="https://app.sattrack.com.br/">Área do
+                                Cliente</a></li>
+                        <li><a href="#">Políticas de Privacidade</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="max-w-7xl mx-auto px-6 mt-16 pt-8 border-t border-white/5">
+                <p class="footer-copyright">© 2026 Sattrack Brasil. Todos os direitos reservados.</p>
+            </div>
+        </footer>
+
+    </main>
+
+    <script>
+        lucide.createIcons();
+
+        // 1. Navbar Loading Animation & Scroll blur
+        setTimeout(() => {
+            document.getElementById('intro-overlay').classList.add('hidden');
+        }, 1500);
+
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('top-nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('nav-scrolled');
+                nav.classList.remove('nav-initial');
+            } else {
+                nav.classList.add('nav-initial');
+                nav.classList.remove('nav-scrolled');
+            }
+        });
+
+        // 2. Parallax
+        window.addEventListener('scroll', () => {
+            const scrolled = window.scrollY;
+            document.querySelectorAll('.parallax-img').forEach((el) => {
+                const speed = el.dataset.speed || 0.1;
+                el.style.transform = `translateY(${scrolled * speed}px)`;
+            });
+        });
+
+        // 3. Scroll Reveal Observer
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.15
+        };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                } else {
+                    entry.target.classList.remove('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal, .stat-card').forEach(el => observer.observe(el));
+
+        // 4. Custom Cursor & Interaction state
+        let mouseX = 0, mouseY = 0;
+        let cursorX = 0, cursorY = 0;
+        let isMouseActive = false;
+
+        if (window.matchMedia('(pointer: fine)').matches) {
+            const cursor = document.createElement('div');
+            cursor.className = 'custom-cursor';
+            cursor.innerHTML = '<iconify-icon icon="solar:gps-bold-duotone" class="cursor-inner"></iconify-icon>';
+            document.body.appendChild(cursor);
+
+            window.addEventListener('mousemove', (e) => {
+                mouseX = e.clientX;
+                mouseY = e.clientY;
+                cursor.style.opacity = '1';
+                isMouseActive = true;
+            });
+
+            // Smooth interpolation
+            function animate() {
+                let dx = mouseX - cursorX;
+                let dy = mouseY - cursorY;
+
+                cursorX += dx * 0.15;
+                cursorY += dy * 0.15;
+
+                cursor.style.transform = `translate(${cursorX - 20}px, ${cursorY - 20}px)`;
+                requestAnimationFrame(animate);
+            }
+            animate();
+
+            document.addEventListener('mouseleave', () => {
+                cursor.style.opacity = '0';
+            });
+
+            // Hover effects for interactive elements
+            document.querySelectorAll('a, button, [role="button"]').forEach(el => {
+                el.addEventListener('mouseenter', () => {
+                    cursor.querySelector('.cursor-inner').style.color = '#fff';
+                    cursor.querySelector('.cursor-inner').style.filter = 'drop-shadow(0 0 20px #fff)';
+                });
+                el.addEventListener('mouseleave', () => {
+                    cursor.querySelector('.cursor-inner').style.color = 'var(--accent)';
+                    cursor.querySelector('.cursor-inner').style.filter = 'drop-shadow(0 0 12px var(--accent))';
+                });
+            });
+        }
+
+        // 5. Signal Background Canvas Animation (Removido pois agora usa Liquid Glass)
+        // 6. Theme Toggle Logic (Unified System)
+        const themeBtn = document.getElementById('theme-toggle');
+        const mobileThemeBtn = document.getElementById('mobile-theme-btn');
+        const sunIcon = document.getElementById('theme-icon-sun');
+        const moonIcon = document.getElementById('theme-icon-moon');
+
+        const toggleTheme = () => {
+            const isLightTheme = document.body.classList.toggle('light-theme');
+            const styleLink = document.getElementById('main-style');
+
+            if (isLightTheme) {
+                if (themeBtn) themeBtn.querySelector('span').innerText = 'Tema Dark';
+                if (sunIcon && moonIcon) {
+                    sunIcon.classList.remove('hidden');
+                    moonIcon.classList.add('hidden');
+                    // Recriar ícones para renderizar novo lucide icon
+                    lucide.createIcons();
+                }
+                styleLink.setAttribute('href', 'indexopcao6_light.css');
+            } else {
+                if (themeBtn) themeBtn.querySelector('span').innerText = 'Tema Gelo';
+                if (sunIcon && moonIcon) {
+                    sunIcon.classList.add('hidden');
+                    moonIcon.classList.remove('hidden');
+                }
+                styleLink.setAttribute('href', 'indexopcao6.css');
+            }
+        };
+
+        if (themeBtn) themeBtn.addEventListener('click', toggleTheme);
+        if (mobileThemeBtn) mobileThemeBtn.addEventListener('click', toggleTheme);
+
+        function toggleFaq(h) {
+            const item = h.parentElement;
+            const wasOpen = item.classList.contains('open');
+            document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+            if (!wasOpen) item.classList.add('open');
+        }
+
+        // Count-up Animation for Stats
+        const counters = document.querySelectorAll('.counter');
+        const countSpeed = 200;
+
+        const countObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const target = entry.target;
+                    const countTo = +target.getAttribute('data-target');
+                    let count = 0;
+                    const increment = countTo / 50;
+
+                    const updateCount = () => {
+                        if (count < countTo) {
+                            count += increment;
+                            target.innerText = Math.ceil(count);
+                            setTimeout(updateCount, 20);
+                        } else {
+                            target.innerText = countTo;
+                        }
+                    };
+                    updateCount();
+                    countObserver.unobserve(target);
+                }
+            });
+        }, { threshold: 0.2 });
+
+        counters.forEach(c => countObserver.observe(c));
+
+        // 7. Dynamic Mouse Spotlight Tracker (Liquid UI Style - Global Overlay)
+        const globalSpotlight = document.getElementById('global-spotlight');
+        document.addEventListener('mousemove', e => {
+            if (globalSpotlight) {
+                globalSpotlight.style.opacity = '1';
+                if (document.body.classList.contains('light-theme')) {
+                    globalSpotlight.style.mixBlendMode = 'multiply';
+                    globalSpotlight.style.background = `radial-gradient(800px circle at ${e.clientX}px ${e.clientY}px, rgba(0, 48, 86, 0.08), transparent 40%)`;
+                } else {
+                    globalSpotlight.style.mixBlendMode = 'overlay';
+                    globalSpotlight.style.background = `radial-gradient(800px circle at ${e.clientX}px ${e.clientY}px, rgba(255, 255, 255, 0.15), transparent 40%)`;
+                }
+            }
+        });
+        document.addEventListener('mouseleave', () => {
+            if (globalSpotlight) globalSpotlight.style.opacity = '0';
+        });
+
+        // 8. Mobile Menu Logic
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
+        const mobileCloseBtn = document.getElementById('mobile-close-btn');
+        const mobileLinks = document.querySelectorAll('.mobile-nav-link');
+
+        if (mobileMenuBtn && mobileMenuOverlay && mobileCloseBtn) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenuOverlay.classList.add('active');
+            });
+
+            mobileCloseBtn.addEventListener('click', () => {
+                mobileMenuOverlay.classList.remove('active');
+            });
+
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenuOverlay.classList.remove('active');
+                });
+            });
+        }
+    </script>
+</body>
+
+</html>
