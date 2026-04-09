@@ -94,51 +94,19 @@
 
         <!-- Logo -->
         <a href="#" class="flex items-center gap-3">
-            <img id="nav-logo-img" src="assets/LOGO-BRANCA-E-VERDE_4067e88c5083.png" alt="Sattrack" class="h-12 w-auto">
+            <img src="assets/LOGO-BRANCA-E-VERDE_4067e88c5083.png" alt="Sattrack" class="h-12 w-auto">
         </a>
 
-        <!-- Desktop Links -->
-        <div id="desktop-nav-links" class="hidden lg:flex items-center gap-12">
+        <div class="hidden lg:flex items-center gap-12">
             <a href="#hero" class="nav-link">Início</a>
             <a href="#cobertura" class="nav-link">Coberturas</a>
             <a href="#credenciais" class="nav-link">Digital Security</a>
         </div>
 
-        <!-- Desktop Button -->
-        <a id="desktop-nav-btn" href="https://app.sattrack.com.br/"
-            class="btn-st py-3 px-8 shadow-none hover:shadow-lg">
+        <a href="https://app.sattrack.com.br/" class="btn-st py-3 px-8 shadow-none hover:shadow-lg">
             Área do Cliente
         </a>
-
-        <!-- Mobile Actions -->
-        <div class="mobile-only-flex items-center gap-3">
-            <button id="mobile-theme-btn"
-                class="flex items-center justify-center p-2 text-white bg-white/10 rounded-full border border-white/20 backdrop-blur-md"
-                style="display: none !important;">
-                <i data-lucide="sun" class="w-5 h-5 hidden" id="theme-icon-sun"></i>
-                <i data-lucide="moon" class="w-5 h-5" id="theme-icon-moon"></i>
-            </button>
-            <button id="mobile-menu-btn" class="text-white">
-                <i data-lucide="menu" class="w-8 h-8"></i>
-            </button>
-        </div>
     </nav>
-
-    <!-- Mobile Menu Overlay -->
-    <div id="mobile-menu-overlay" class="mobile-menu-wrapper">
-        <button id="mobile-close-btn" class="mobile-menu-close">
-            <i data-lucide="x" class="w-8 h-8"></i>
-        </button>
-        <div class="mobile-menu-content">
-            <a href="#hero" class="mobile-nav-link">Início</a>
-            <a href="#cobertura" class="mobile-nav-link">Coberturas</a>
-            <a href="#credenciais" class="mobile-nav-link">Digital Security</a>
-            <div class="mobile-menu-divider"></div>
-            <a href="https://app.sattrack.com.br/" class="btn-st mobile-btn-st">
-                Área do Cliente
-            </a>
-        </div>
-    </div>
 
     <main class="relative z-10 w-full overflow-hidden">
 
@@ -151,10 +119,9 @@
                 <div class="hero-bg-expanding-overlay"></div>
             </div>
 
-            <!-- Botão de Alternar Tema (Oculto temporariamente) -->
+            <!-- Botão de Alternar Tema -->
             <button id="theme-toggle"
-                class="absolute top-10 right-10 z-[100] p-4 glass-panel flex items-center gap-3 hover:scale-105 transition-all"
-                style="display: none !important;">
+                class="absolute top-10 right-10 z-[100] p-4 glass-panel flex items-center gap-3 hover:scale-105 transition-all">
                 <i data-lucide="palette" class="w-4 h-4"></i>
                 <span>Tema Gelo</span>
             </button>
@@ -176,7 +143,10 @@
                         <div class="hero-bar"></div>
                         <div class="hero-bar"></div>
                     </div>
-
+                    <div class="hero-tag-premium reveal delay-100 flex items-center">
+                        <span class="offer-pulse"></span>
+                        GANHE PROTEÇÃO POR
+                    </div>
 
                     <h1 class="hero-title-massive reveal delay-200">
                         30 DIAS<br />
@@ -266,26 +236,33 @@
                 </div>
             </div>
 
-            <!-- Bento Grid - Premium Glass System -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+            <!-- Bento Grid - Inspired by glass-effect2 -->
+            <div
+                class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto auto-rows-[minmax(280px,auto)]">
 
                 <!-- Card 1: Colisões (Large) -> lg:col-span-2 -->
                 <div
-                    class="glass-card p-10 rounded-3xl cursor-hover group reveal delay-100 flex flex-col justify-between lg:col-span-2 border border-white/10 relative overflow-hidden bg-white/[0.02]">
+                    class="glass-card p-10 rounded-[2.5rem] cursor-hover group reveal delay-100 relative overflow-hidden flex flex-col justify-between lg:col-span-2">
+                    <img src="assets/bg_collisions.png"
+                        class="absolute inset-0 w-full h-full object-cover transform scale-100 group-hover:scale-105 transition-transform duration-700 opacity-20 group-hover:opacity-40 filter grayscale group-hover:grayscale-0"
+                        alt="Collisions">
                     <div
-                        class="absolute inset-0 bg-gradient-to-br from-[#007bff]/10 to-transparent z-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                        class="absolute inset-0 bg-gradient-to-t from-[var(--surface)]/90 via-[#050a14]/40 to-transparent z-0">
                     </div>
-                    <div
-                        class="absolute top-0 right-0 p-8 opacity-20 group-hover:opacity-100 transition-opacity duration-500 z-10">
-                        <i data-lucide="arrow-up-right" class="w-8 h-8 text-white"></i>
+
+                    <div class="relative z-10 flex justify-between items-start mb-16">
+                        <div
+                            class="w-16 h-16 bg-gradient-to-br from-white/10 to-transparent border border-white/10 rounded-2xl flex items-center justify-center shadow-inner group-hover:scale-110 transition-transform duration-500">
+                            <i data-lucide="shield" class="w-8 h-8 text-white"></i>
+                        </div>
+                        <div class="opacity-20 group-hover:opacity-100 transition-opacity duration-500">
+                            <i data-lucide="arrow-up-right" class="w-8 h-8 text-white"></i>
+                        </div>
                     </div>
-                    <div
-                        class="relative z-10 w-16 h-16 bg-gradient-to-br from-white/10 to-transparent border border-white/10 rounded-2xl flex items-center justify-center text-[var(--accent)] mb-8 shadow-inner group-hover:scale-110 transition-transform duration-500">
-                        <i data-lucide="shield" class="w-8 h-8 text-[var(--accent)]"></i>
-                    </div>
+
                     <div class="relative z-10 mt-auto">
                         <span
-                            class="px-3 py-1 rounded bg-white/5 border border-white/10 text-[10px] font-semibold text-white/60 uppercase tracking-widest mb-4 inline-block backdrop-blur-md">MOD:
+                            class="glass-card px-3 py-1 rounded-md text-[10px] font-semibold text-white/60 uppercase tracking-widest mb-4 inline-block backdrop-blur-md">MOD:
                             001_TOTAL_SEC</span>
                         <h3 class="font-heading text-3xl font-medium mb-3 text-white tracking-tight">Colisões &
                             Terceiros</h3>
@@ -297,20 +274,26 @@
 
                 <!-- Card 2: Furto & Roubo -->
                 <div
-                    class="glass-card p-8 rounded-3xl cursor-hover group reveal delay-200 flex flex-col justify-between border border-white/10 relative overflow-hidden bg-white/[0.02]">
+                    class="glass-card p-8 rounded-[2.5rem] cursor-hover group reveal delay-200 relative overflow-hidden flex flex-col">
+                    <img src="assets/bg_theft.png"
+                        class="absolute inset-0 w-full h-full object-cover opacity-10 group-hover:opacity-30 group-hover:scale-110 transition-all duration-700"
+                        alt="Theft">
                     <div
-                        class="absolute inset-0 bg-gradient-to-br from-[var(--brand)]/10 to-transparent z-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                        class="absolute inset-0 bg-gradient-to-t from-[var(--surface)]/90 via-transparent to-transparent z-0">
                     </div>
-                    <div
-                        class="absolute top-0 right-0 p-8 opacity-20 group-hover:opacity-100 transition-opacity duration-500 z-10">
-                        <i data-lucide="arrow-up-right" class="w-6 h-6 text-white"></i>
+
+                    <div class="relative z-10 flex justify-between items-start mb-12">
+                        <div
+                            class="w-14 h-14 bg-gradient-to-br from-white/10 to-transparent border border-white/10 rounded-2xl flex items-center justify-center text-[var(--accent)] shadow-inner group-hover:scale-110 transition-transform duration-500">
+                            <i data-lucide="zap" class="w-6 h-6 text-[var(--accent)]"></i>
+                        </div>
+                        <div class="opacity-20 group-hover:opacity-100 transition-opacity duration-500">
+                            <i data-lucide="arrow-up-right" class="w-6 h-6 text-white"></i>
+                        </div>
                     </div>
-                    <div
-                        class="relative z-10 w-14 h-14 bg-gradient-to-br from-white/10 to-transparent border border-white/10 rounded-2xl flex items-center justify-center text-[var(--accent)] mb-8 shadow-inner group-hover:scale-110 transition-transform duration-500">
-                        <i data-lucide="zap" class="w-6 h-6 text-[var(--accent)]"></i>
-                    </div>
+
                     <div class="relative z-10 mt-auto">
-                        <h3 class="font-heading text-2xl font-medium mb-3 text-white tracking-tight">Furto & Roubo</h3>
+                        <h3 class="font-heading text-2xl font-medium mb-2 text-white tracking-tight">Furto & Roubo</h3>
                         <p class="text-sm text-gray-400 leading-relaxed">Até 100% de ressarcimento caso seu veículo não
                             seja localizado após acionamento da central tática.</p>
                     </div>
@@ -318,20 +301,26 @@
 
                 <!-- Card 3: Rastreador GPRS -->
                 <div
-                    class="glass-card p-8 rounded-3xl cursor-hover group reveal delay-300 flex flex-col justify-between border border-white/10 relative overflow-hidden bg-white/[0.02]">
+                    class="glass-card p-8 rounded-[2.5rem] cursor-hover group reveal delay-300 relative overflow-hidden flex flex-col">
+                    <img src="assets/bg_telemetry.png"
+                        class="absolute inset-0 w-full h-full object-cover opacity-10 group-hover:opacity-30 group-hover:scale-110 transition-all duration-700"
+                        alt="Telemetry">
                     <div
-                        class="absolute inset-0 bg-gradient-to-br from-[var(--accent)]/10 to-transparent z-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                        class="absolute inset-0 bg-gradient-to-t from-[var(--surface)]/90 via-transparent to-transparent z-0">
                     </div>
-                    <div
-                        class="absolute top-0 right-0 p-8 opacity-20 group-hover:opacity-100 transition-opacity duration-500 z-10">
-                        <i data-lucide="arrow-up-right" class="w-6 h-6 text-white"></i>
+
+                    <div class="relative z-10 flex justify-between items-start mb-12">
+                        <div
+                            class="w-14 h-14 bg-gradient-to-br from-white/10 to-transparent border border-white/10 rounded-2xl flex items-center justify-center text-[var(--accent)] shadow-inner group-hover:scale-110 transition-transform duration-500">
+                            <i data-lucide="map-pin" class="w-6 h-6 text-[var(--accent)]"></i>
+                        </div>
+                        <div class="opacity-20 group-hover:opacity-100 transition-opacity duration-500">
+                            <i data-lucide="arrow-up-right" class="w-6 h-6 text-white"></i>
+                        </div>
                     </div>
-                    <div
-                        class="relative z-10 w-14 h-14 bg-gradient-to-br from-white/10 to-transparent border border-white/10 rounded-2xl flex items-center justify-center text-[var(--accent)] mb-8 shadow-inner group-hover:scale-110 transition-transform duration-500">
-                        <i data-lucide="map-pin" class="w-6 h-6 text-[var(--accent)]"></i>
-                    </div>
+
                     <div class="relative z-10 mt-auto">
-                        <h3 class="font-heading text-2xl font-medium mb-3 text-white tracking-tight">Rastreador GPRS
+                        <h3 class="font-heading text-2xl font-medium mb-2 text-white tracking-tight">Rastreador GPRS
                         </h3>
                         <p class="text-sm text-gray-400 leading-relaxed">Precisão métrica com instalação estratégica e
                             invisível em local oculto, compatível com uso nacional.</p>
@@ -340,122 +329,149 @@
 
                 <!-- Card 4: Assistencia e Guincho (Mid-wide) -> lg:col-span-3 -->
                 <div
-                    class="glass-card p-8 md:p-10 rounded-3xl cursor-hover group reveal delay-100 flex flex-col md:flex-row items-center border border-white/10 relative overflow-hidden lg:col-span-3 bg-gradient-to-r from-[var(--brand)]/20 to-[var(--surface)]/5">
+                    class="glass-card p-8 md:p-10 rounded-[2.5rem] cursor-hover group reveal delay-100 relative overflow-hidden flex flex-col md:flex-row items-center gap-8 lg:col-span-3 bg-[#050a14]">
+                    <div class="absolute inset-0 bg-gradient-to-r from-[var(--brand)]/40 to-[#0e0e12] z-0"></div>
+
                     <div
-                        class="absolute top-0 right-0 p-8 opacity-20 group-hover:opacity-100 transition-opacity duration-500 z-10">
-                        <i data-lucide="arrow-up-right" class="w-8 h-8 text-white"></i>
+                        class="relative z-10 md:w-1/2 order-2 md:order-1 h-full flex flex-col items-center justify-center">
+                        <div
+                            class="w-32 h-32 bg-[var(--brand)] rounded-full blur-[60px] absolute opacity-50 group-hover:opacity-100 transition-opacity duration-700">
+                        </div>
+                        <img src="assets/VEICULOS_58c8aae17fd6.png"
+                            class="w-full max-w-[300px] h-auto opacity-70 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 drop-shadow-2xl grayscale group-hover:grayscale-0 relative z-10"
+                            alt="Assistance">
                     </div>
-                    <div class="relative z-10 md:w-3/4">
+                    <div class="relative z-10 md:w-1/2 order-1 md:order-2">
                         <div class="flex items-center gap-2 mb-4 relative">
+                            <div
+                                class="absolute -left-4 top-1.5 w-2 h-2 rounded-full bg-[var(--accent)] animate-pulse shadow-[0_0_10px_var(--accent)]">
+                            </div>
                             <span
-                                class="w-2 h-2 rounded-full bg-[var(--accent)] animate-pulse shadow-[0_0_10px_var(--accent)]"></span>
-                            <span
-                                class="text-[10px] font-semibold text-[var(--accent)] uppercase tracking-widest pl-1">Assistência
+                                class="text-[10px] font-semibold text-white/60 uppercase tracking-widest pl-1">Assistência
                                 24h</span>
                         </div>
                         <h3 class="font-heading text-4xl font-medium mb-4 text-white tracking-tight">Guincho Nacional
                         </h3>
-                        <p class="text-base text-gray-400 leading-relaxed max-w-xl md:mb-0 mb-8">Panes elétricas,
-                            mecânicas ou sinistros. Nossa equipe está pronta para o resgate imediato onde você precisar,
-                            oferecendo segurança em qualquer estrada do país.</p>
+                        <p class="text-base text-gray-400 leading-relaxed mb-8 max-w-sm">Panes elétricas, mecânicas ou
+                            sinistros. Nossa equipe está pronta para o resgate imediato onde você precisar.</p>
+                        <span
+                            class="glass-card px-4 py-2 rounded text-[10px] uppercase font-bold text-[var(--accent)] border border-white/10 flex items-center gap-2 w-fit bg-white/5">
+                            Prontidão Total <i data-lucide="check-circle" class="w-3 h-3 text-[var(--accent)]"></i>
+                        </span>
                     </div>
-                    <div class="relative z-10 md:w-1/4 flex justify-start md:justify-end">
+                </div>
+
+                <!-- Card 5: Bloqueio Remoto -->
+                <div
+                    class="glass-card p-8 rounded-[2.5rem] cursor-hover group reveal delay-200 relative overflow-hidden flex flex-col border-[var(--accent)]/30">
+                    <div class="absolute inset-0 bg-gradient-to-br from-[var(--surface)] to-[var(--brand)]/30 z-0">
+                    </div>
+                    <img src="assets/hero_bg_tracking.png"
+                        class="absolute inset-0 w-full h-full object-cover opacity-10 group-hover:opacity-30 group-hover:scale-110 transition-all duration-700 mix-blend-screen"
+                        alt="App Tracking">
+
+                    <div class="relative z-10 flex justify-between items-start mb-12">
                         <div
-                            class="w-24 h-24 bg-gradient-to-br from-[var(--brand)] to-transparent border border-white/10 rounded-2xl flex items-center justify-center shadow-inner group-hover:scale-110 transition-transform duration-500">
-                            <i data-lucide="truck" class="w-12 h-12 text-white"></i>
+                            class="w-14 h-14 bg-gradient-to-br from-[var(--brand)]/50 to-[var(--accent)]/50 border border-white/20 rounded-2xl flex items-center justify-center shadow-lg shadow-[var(--brand)]/40 group-hover:scale-110 transition-transform duration-500">
+                            <i data-lucide="smartphone" class="w-6 h-6 text-white"></i>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span class="text-[9px] uppercase tracking-widest text-[#61CE70] font-bold">App
+                                Real-time</span>
+                            <div class="w-1.5 h-1.5 rounded-full bg-[#61CE70] animate-pulse"></div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Card 5: Perda Total -->
-                <div
-                    class="glass-card p-8 rounded-3xl cursor-hover group reveal delay-200 flex flex-col justify-between border border-white/10 relative overflow-hidden bg-white/[0.02]">
-                    <div
-                        class="absolute inset-0 bg-gradient-to-br from-red-500/10 to-transparent z-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                    </div>
-                    <div
-                        class="absolute top-0 right-0 p-8 opacity-20 group-hover:opacity-100 transition-opacity duration-500 z-10">
-                        <i data-lucide="arrow-up-right" class="w-6 h-6 text-white"></i>
-                    </div>
-                    <div
-                        class="relative z-10 w-14 h-14 bg-gradient-to-br from-white/10 to-transparent border border-white/10 rounded-2xl flex items-center justify-center text-[var(--accent)] mb-8 shadow-inner group-hover:scale-110 transition-transform duration-500">
-                        <i data-lucide="alert-triangle" class="w-6 h-6 text-[var(--accent)]"></i>
-                    </div>
                     <div class="relative z-10 mt-auto">
-                        <h3 class="font-heading text-2xl font-medium mb-3 text-white tracking-tight">Perda Total</h3>
-                        <p class="text-sm text-gray-400 leading-relaxed">Cobertura integral do valor do veículo em casos
-                            de danos irreparáveis.</p>
-                    </div>
-                </div>
-
-                <!-- Card 6: Carro Reserva -->
-                <div
-                    class="glass-card p-8 rounded-3xl cursor-hover group reveal delay-100 flex flex-col justify-between border border-white/10 relative overflow-hidden bg-white/[0.02]">
-                    <div
-                        class="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-transparent z-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                    </div>
-                    <div
-                        class="absolute top-0 right-0 p-8 opacity-20 group-hover:opacity-100 transition-opacity duration-500 z-10">
-                        <i data-lucide="arrow-up-right" class="w-6 h-6 text-white"></i>
-                    </div>
-                    <div
-                        class="relative z-10 w-14 h-14 bg-gradient-to-br from-white/10 to-transparent border border-white/10 rounded-2xl flex items-center justify-center text-[var(--accent)] mb-8 shadow-inner group-hover:scale-110 transition-transform duration-500">
-                        <i data-lucide="key" class="w-6 h-6 text-[var(--accent)]"></i>
-                    </div>
-                    <div class="relative z-10 mt-auto">
-                        <h3 class="font-heading text-2xl font-medium mb-3 text-white tracking-tight">Carro Reserva</h3>
-                        <p class="text-sm text-gray-400 leading-relaxed">Garantia de mobilidade para que você nunca
-                            fique parado durante o reparo de sinistros.</p>
-                    </div>
-                </div>
-
-                <!-- Card 7: Bloqueio Remoto -->
-                <div
-                    class="glass-card p-8 rounded-3xl cursor-hover group reveal delay-200 flex flex-col justify-between border border-[var(--accent)]/30 relative overflow-hidden bg-gradient-to-br from-[#050a14] to-[var(--brand)]/20 lg:col-span-1">
-                    <div
-                        class="absolute inset-0 bg-[var(--accent)]/5 z-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                    </div>
-                    <div
-                        class="absolute top-0 right-0 p-8 opacity-20 group-hover:opacity-100 transition-opacity duration-500 z-10">
-                        <i data-lucide="arrow-up-right" class="w-6 h-6 text-white"></i>
-                    </div>
-                    <div class="flex items-center gap-2 mb-8 absolute top-8 right-8 z-10">
-                        <span class="text-[9px] uppercase tracking-widest text-[#61CE70] font-bold hidden md:block">App
-                            Real-time</span>
-                        <div class="w-1.5 h-1.5 rounded-full bg-[#61CE70] animate-pulse"></div>
-                    </div>
-                    <div
-                        class="relative z-10 w-14 h-14 bg-gradient-to-br from-[var(--brand)] to-[var(--accent)] border border-white/20 rounded-2xl flex items-center justify-center shadow-lg shadow-[var(--accent)]/20 group-hover:scale-110 transition-transform duration-500 mb-8">
-                        <i data-lucide="smartphone" class="w-6 h-6 text-white"></i>
-                    </div>
-                    <div class="relative z-10 mt-auto">
-                        <h3 class="font-heading text-2xl font-medium mb-3 text-white tracking-tight">Bloqueio Remoto
+                        <h3 class="font-heading text-2xl font-medium mb-2 text-white tracking-tight">Bloqueio Remoto
                         </h3>
                         <p class="text-sm text-gray-400 leading-relaxed">Controle total via smartphone para interrupção
                             instantânea em caso de risco.</p>
                     </div>
                 </div>
 
+                <!-- Card 6: Perda Total -->
+                <div
+                    class="glass-card p-8 rounded-[2.5rem] cursor-hover group reveal delay-100 relative overflow-hidden flex flex-col">
+                    <img src="assets/bg_total_loss.png"
+                        class="absolute inset-0 w-full h-full object-cover opacity-10 group-hover:opacity-30 group-hover:scale-110 transition-all duration-700 filter grayscale"
+                        alt="Total Loss">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-[var(--surface)]/90 via-transparent to-transparent z-0">
+                    </div>
+
+                    <div class="relative z-10 flex justify-between items-start mb-12">
+                        <div
+                            class="w-14 h-14 bg-gradient-to-br from-white/10 to-transparent border border-white/10 rounded-2xl flex items-center justify-center text-[var(--accent)] shadow-inner group-hover:scale-110 transition-transform duration-500">
+                            <i data-lucide="alert-triangle" class="w-6 h-6 text-[var(--accent)]"></i>
+                        </div>
+                        <div class="opacity-20 group-hover:opacity-100 transition-opacity duration-500">
+                            <i data-lucide="arrow-up-right" class="w-6 h-6 text-white"></i>
+                        </div>
+                    </div>
+
+                    <div class="relative z-10 mt-auto">
+                        <h3 class="font-heading text-2xl font-medium mb-2 text-white tracking-tight">Perda Total</h3>
+                        <p class="text-sm text-gray-400 leading-relaxed">Cobertura integral do valor do veículo em casos
+                            de danos irreparáveis ao patrimônio.</p>
+                    </div>
+                </div>
+
+                <!-- Card 7: Carro Reserva -->
+                <div
+                    class="glass-card p-8 rounded-[2.5rem] cursor-hover group reveal delay-200 relative overflow-hidden flex flex-col">
+                    <img src="assets/bg_replacement_car.png"
+                        class="absolute inset-0 w-full h-full object-cover opacity-10 group-hover:opacity-30 group-hover:scale-110 transition-all duration-700 filter grayscale"
+                        alt="Replacement Car">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-[var(--surface)]/90 via-transparent to-transparent z-0">
+                    </div>
+
+                    <div class="relative z-10 flex justify-between items-start mb-12">
+                        <div
+                            class="w-14 h-14 bg-gradient-to-br from-white/10 to-transparent border border-white/10 rounded-2xl flex items-center justify-center text-[var(--accent)] shadow-inner group-hover:scale-110 transition-transform duration-500">
+                            <i data-lucide="key" class="w-6 h-6 text-[var(--accent)]"></i>
+                        </div>
+                        <div class="opacity-20 group-hover:opacity-100 transition-opacity duration-500">
+                            <i data-lucide="arrow-up-right" class="w-6 h-6 text-white"></i>
+                        </div>
+                    </div>
+
+                    <div class="relative z-10 mt-auto">
+                        <h3 class="font-heading text-2xl font-medium mb-2 text-white tracking-tight">Carro Reserva</h3>
+                        <p class="text-sm text-gray-400 leading-relaxed">Garantia de mobilidade para que você nunca
+                            fique parado durante o reparo de sinistros.</p>
+                    </div>
+                </div>
+
                 <!-- Card 8: Central Tática 24h -> lg:col-span-2 -->
                 <div
-                    class="glass-card p-8 md:p-10 rounded-3xl cursor-hover group reveal delay-300 flex flex-col md:flex-row items-center border border-white/10 relative overflow-hidden lg:col-span-2 bg-[#050a14]">
+                    class="glass-card p-8 md:p-10 rounded-[2.5rem] cursor-hover group reveal delay-300 relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-8 lg:col-span-2 group border border-white/10">
+                    <img src="assets/hero_bg_tracking.png"
+                        class="absolute inset-0 w-full h-full object-cover opacity-10 group-hover:opacity-30 group-hover:scale-110 transition-all duration-700"
+                        alt="Support">
                     <div
-                        class="absolute inset-0 bg-gradient-to-r from-[#0055ff]/10 to-[var(--brand)]/20 z-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                        class="absolute inset-0 bg-gradient-to-r from-[var(--brand)]/90 via-[#0e0e12]/80 to-transparent z-0 mix-blend-multiply">
                     </div>
-                    <div
-                        class="absolute top-0 right-0 p-8 opacity-20 group-hover:opacity-100 transition-opacity duration-500 z-10">
-                        <i data-lucide="arrow-right" class="w-8 h-8 text-white"></i>
-                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#0e0e12] via-transparent to-transparent"></div>
+
                     <div class="relative z-10 md:w-3/4">
                         <div
-                            class="w-16 h-16 bg-gradient-to-br from-[var(--brand)] to-[#0055ff] border border-white/20 rounded-2xl flex items-center justify-center shadow-lg shadow-[#0055ff]/30 group-hover:scale-110 transition-transform duration-500 mb-8">
-                            <i data-lucide="headphones" class="w-8 h-8 text-white"></i>
+                            class="w-14 h-14 bg-gradient-to-br from-white/10 to-transparent border border-white/10 rounded-2xl flex items-center justify-center shadow-inner group-hover:scale-110 transition-transform duration-500 mb-8">
+                            <i data-lucide="headphones" class="w-6 h-6 text-white"></i>
                         </div>
                         <h3 class="font-heading text-3xl font-medium mb-3 text-white tracking-tight">Central Tática 24h
                         </h3>
-                        <p class="text-base text-gray-400 leading-relaxed">Nossa equipe de especialistas está à
-                            disposição 24 horas por dia para resgate estratégico e suporte imediato em qualquer lugar do
-                            Brasil.</p>
+                        <p class="text-base text-gray-400 leading-relaxed">Nossa equipe de especialistas em segurança
+                            está à disposição 24 horas por dia, 7 dias por semana, para resgate e suporte imediato em
+                            qualquer lugar do Brasil.</p>
+                    </div>
+                    <div
+                        class="relative z-10 mt-4 md:mt-0 opacity-40 group-hover:opacity-100 transition-opacity duration-500">
+                        <div
+                            class="w-16 h-16 rounded-full glass-card border border-white/20 flex items-center justify-center backdrop-blur-md group-hover:scale-110 transition-transform duration-300">
+                            <i data-lucide="arrow-right" class="w-6 h-6 text-white"></i>
+                        </div>
                     </div>
                 </div>
 
@@ -480,6 +496,7 @@
                     <div class="relative z-10">
                         <div class="flex items-center gap-3 mb-8">
                             <span class="w-2 h-2 bg-accent rounded-full animate-ping"></span>
+                            <span class="label-txt">CENTRAL DE MONITORAMENTO LIVE</span>
                         </div>
 
                         <h3 class="cotacao-block-title">
@@ -543,6 +560,8 @@
                         <div class="relative z-10 mb-8">
                             <div class="flex items-center gap-2 mb-2">
                                 <div class="w-8 h-[1px] bg-accent"></div>
+                                <span class="text-[10px] font-bold text-accent tracking-[0.3em] uppercase">Security
+                                    Form</span>
                             </div>
                             <h4 class="text-4xl font-bold text-white uppercase tracking-tighter">Ativar Proteção</h4>
                         </div>
@@ -902,35 +921,43 @@
         // 5. Signal Background Canvas Animation (Removido pois agora usa Liquid Glass)
         // 6. Theme Toggle Logic (Unified System)
         const themeBtn = document.getElementById('theme-toggle');
-        const mobileThemeBtn = document.getElementById('mobile-theme-btn');
-        const sunIcon = document.getElementById('theme-icon-sun');
-        const moonIcon = document.getElementById('theme-icon-moon');
 
-        const toggleTheme = () => {
+        themeBtn.addEventListener('click', () => {
             const isLightTheme = document.body.classList.toggle('light-theme');
             const styleLink = document.getElementById('main-style');
 
-            if (isLightTheme) {
-                if (themeBtn) themeBtn.querySelector('span').innerText = 'Tema Dark';
-                if (sunIcon && moonIcon) {
-                    sunIcon.classList.remove('hidden');
-                    moonIcon.classList.add('hidden');
-                    // Recriar ícones para renderizar novo lucide icon
-                    lucide.createIcons();
-                }
-                styleLink.setAttribute('href', 'indexopcao6_light.css');
-            } else {
-                if (themeBtn) themeBtn.querySelector('span').innerText = 'Tema Gelo';
-                if (sunIcon && moonIcon) {
-                    sunIcon.classList.add('hidden');
-                    moonIcon.classList.remove('hidden');
-                }
-                styleLink.setAttribute('href', 'indexopcao6.css');
-            }
-        };
+            // Mapeamento de imagens para troca dinâmica
+            const images = {
+                'Collisions': { light: 'assets/light_collisions_v2.jpg', dark: 'assets/bg_collisions.png' },
+                'Theft': { light: 'assets/light_theft_v2.jpg', dark: 'assets/bg_theft.png' },
+                'Telemetry': { light: 'assets/light_telemetry_v2.jpg', dark: 'assets/bg_telemetry.png' },
+                'Assistance': { light: 'assets/light_guicho_v2.jpg', dark: 'assets/VEICULOS_58c8aae17fd6.png' },
+                'Remote Block': { light: 'assets/light_app_v2.jpg', dark: 'assets/hero_bg_tracking.png' },
+                'Total Loss': { light: 'assets/light_total_loss_v2.jpg', dark: 'assets/bg_total_loss.png' },
+                'Replacement Car': { light: 'assets/light_reserve_v2.jpg', dark: 'assets/bg_replacement_car.png' },
+                'Support': { light: 'assets/light_support_v2.jpg', dark: 'assets/hero_bg_tracking.png' }
+            };
 
-        if (themeBtn) themeBtn.addEventListener('click', toggleTheme);
-        if (mobileThemeBtn) mobileThemeBtn.addEventListener('click', toggleTheme);
+            if (isLightTheme) {
+                themeBtn.querySelector('span').innerText = 'Tema Dark';
+                styleLink.setAttribute('href', 'indexopcao6_light.css');
+
+                // Atualiza todas as imagens da seção cobertura
+                Object.keys(images).forEach(alt => {
+                    const img = document.querySelector(`img[alt="${alt}"]`);
+                    if (img) img.src = images[alt].light;
+                });
+            } else {
+                themeBtn.querySelector('span').innerText = 'Tema Gelo';
+                styleLink.setAttribute('href', 'indexopcao6.css');
+
+                // Restaura todas as imagens originais
+                Object.keys(images).forEach(alt => {
+                    const img = document.querySelector(`img[alt="${alt}"]`);
+                    if (img) img.src = images[alt].dark;
+                });
+            }
+        });
 
         function toggleFaq(h) {
             const item = h.parentElement;
@@ -985,28 +1012,6 @@
         document.addEventListener('mouseleave', () => {
             if (globalSpotlight) globalSpotlight.style.opacity = '0';
         });
-
-        // 8. Mobile Menu Logic
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
-        const mobileCloseBtn = document.getElementById('mobile-close-btn');
-        const mobileLinks = document.querySelectorAll('.mobile-nav-link');
-
-        if (mobileMenuBtn && mobileMenuOverlay && mobileCloseBtn) {
-            mobileMenuBtn.addEventListener('click', () => {
-                mobileMenuOverlay.classList.add('active');
-            });
-
-            mobileCloseBtn.addEventListener('click', () => {
-                mobileMenuOverlay.classList.remove('active');
-            });
-
-            mobileLinks.forEach(link => {
-                link.addEventListener('click', () => {
-                    mobileMenuOverlay.classList.remove('active');
-                });
-            });
-        }
     </script>
 </body>
 
